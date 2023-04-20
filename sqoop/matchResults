@@ -7,7 +7,8 @@ sqoop import \
 --connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
 --username root \
 --password cloudera \
---table player_stats \
+--table match_results \
 -m 1 \
 --warehouse-dir /user/cloudera/counterstrike/
+
 

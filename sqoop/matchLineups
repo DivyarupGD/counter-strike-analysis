@@ -1,10 +1,11 @@
-Primary Key: id of player
+Here Primary Key: matchId (string)
+And since there are no outliers, we will not specify any boundary vals query or split-by column
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
 --username root \
 --password cloudera \
---table players \
+--table match_lineups \
 --warehouse-dir /user/cloudera/counterstrike/
 
 

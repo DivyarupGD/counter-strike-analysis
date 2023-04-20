@@ -1,0 +1,22 @@
+Primary Key: None
+We use id as the split column, but since there ids are sparsely populated, some mappers will process more records and some will process less
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
+--username root \
+--password cloudera \
+--table event_ids \
+--split-by id \
+--warehouse-dir /user/cloudera/counterstrike/
+
+Another alternative is to use 1 mapper - NOT IDEAL
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
+--username root \
+--password cloudera \
+--table event_ids \
+-m 1
+--warehouse-dir /user/cloudera/counterstrike/
+
+

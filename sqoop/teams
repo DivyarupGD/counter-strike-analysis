@@ -1,4 +1,4 @@
-Here Primary Key is the ID of the team and since there are no outliers, we will not specify any boundary vals query or split-by column
+Primary Key: id of team
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
