@@ -1,0 +1,12 @@
+Here Primary Key is the ID of the player and since there are no outliers, we will not specify any boundary vals query or split-by column
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
+--username root \
+--password cloudera \
+--table players \
+--warehouse-dir /user/cloudera/counterstrike/
+
+
+
+
