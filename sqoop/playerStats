@@ -1,0 +1,13 @@
+There is no primary key for the player_stats table.
+The primary key that can be considered is (Map, Match_id), but that is not viable in sqoop import as we have to mention 2 columns which is not possible.
+We cannot use split-by also because there is no single column which contains unique elements.
+So we will have to use 1 mapper only which would create only 1 file in warehouse directory and no parallelism
+
+sqoop import \
+--connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
+--username root \
+--password cloudera \
+--table player_stats \
+-m 1 \
+--warehouse-dir /user/cloudera/counterstrike/
+
