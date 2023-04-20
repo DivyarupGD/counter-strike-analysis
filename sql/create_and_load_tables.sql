@@ -27,4 +27,12 @@ LOAD DATA INFILE "/home/cloudera/Desktop/shared/data/matchIDs.csv" INTO TABLE ma
 LOAD DATA INFILE "/home/cloudera/Desktop/shared/data/joinMatchEvent.csv" INTO TABLE match_events COLUMNS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INFILE "/home/cloudera/Desktop/shared/data/matchResults.csv" INTO TABLE match_results COLUMNS TERMINATED BY ',' LINES TERMINATED BY '\n';
 
-
+/****************************************** Verifying load is successful *********************************************/
+SELECT * FROM players LIMIT 10;
+SELECT * FROM teams LIMIT 10;
+SELECT * FROM player_stats LIMIT 10;
+SELECT * FROM match_lineups LIMIT 10;
+SELECT * FROM event_ids LIMIT 10;
+SELECT * FROM match_ids LIMIT 10;
+SELECT * FROM match_events LIMIT 10;
+SELECT * FROM match_results LIMIT 10;
