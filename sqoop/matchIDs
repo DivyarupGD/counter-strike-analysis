@@ -1,12 +1,9 @@
-Primary Key: id of player
+Primary Key: id
 
 sqoop import \
 --connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
 --username root \
 --password cloudera \
---table players \
+--table match_ids \
 --warehouse-dir /user/cloudera/counterstrike/
-
-
-
 

@@ -1,0 +1,8 @@
+Uses Primary key of tables for creating splits, if primary key is not present, then automatic fall back to using 1 mapper
+
+sqoop import-all-tables \
+--connect jdbc:mysql://quickstart.cloudera:3306/counterstrike \
+--username root \
+--password cloudera \
+--autoreset-to-one-mapper \
+--warehouse-dir /user/cloudera/counterstrike1/

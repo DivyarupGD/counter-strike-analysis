@@ -1,0 +1,83 @@
+Warning: Please set $ACCUMULO_HOME to the root of your Accumulo installation.
+23/04/20 14:15:05 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6-cdh5.13.0
+23/04/20 14:15:05 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+23/04/20 14:15:05 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+23/04/20 14:15:05 INFO tool.CodeGenTool: Beginning code generation
+23/04/20 14:15:06 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `match_ids` AS t LIMIT 1
+23/04/20 14:15:06 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `match_ids` AS t LIMIT 1
+23/04/20 14:15:06 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /usr/lib/hadoop-mapreduce
+Note: /tmp/sqoop-cloudera/compile/1687cf76c9721ae368629ec7f67d7762/match_ids.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+23/04/20 14:15:08 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-cloudera/compile/1687cf76c9721ae368629ec7f67d7762/match_ids.jar
+23/04/20 14:15:08 WARN manager.MySQLManager: It looks like you are importing from mysql.
+23/04/20 14:15:08 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+23/04/20 14:15:08 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+23/04/20 14:15:08 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+23/04/20 14:15:08 INFO mapreduce.ImportJobBase: Beginning import of match_ids
+23/04/20 14:15:08 INFO Configuration.deprecation: mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+23/04/20 14:15:08 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+23/04/20 14:15:09 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+23/04/20 14:15:09 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+23/04/20 14:15:11 INFO db.DBInputFormat: Using read commited transaction isolation
+23/04/20 14:15:11 INFO db.DataDrivenDBInputFormat: BoundingValsQuery: SELECT MIN(`id`), MAX(`id`) FROM `match_ids`
+23/04/20 14:15:11 INFO db.IntegerSplitter: Split size: 5367; Num splits: 4 from: 2289946 to: 2311414
+23/04/20 14:15:11 INFO mapreduce.JobSubmitter: number of splits:4
+23/04/20 14:15:11 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1682013543627_0003
+23/04/20 14:15:11 INFO impl.YarnClientImpl: Submitted application application_1682013543627_0003
+23/04/20 14:15:11 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1682013543627_0003/
+23/04/20 14:15:11 INFO mapreduce.Job: Running job: job_1682013543627_0003
+23/04/20 14:15:20 INFO mapreduce.Job: Job job_1682013543627_0003 running in uber mode : false
+23/04/20 14:15:20 INFO mapreduce.Job:  map 0% reduce 0%
+23/04/20 14:15:27 INFO mapreduce.Job:  map 25% reduce 0%
+23/04/20 14:15:28 INFO mapreduce.Job:  map 50% reduce 0%
+23/04/20 14:15:29 INFO mapreduce.Job:  map 75% reduce 0%
+23/04/20 14:15:30 INFO mapreduce.Job:  map 100% reduce 0%
+23/04/20 14:15:31 INFO mapreduce.Job: Job job_1682013543627_0003 completed successfully
+23/04/20 14:15:31 INFO mapreduce.Job: Counters: 30
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=685428
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=441
+		HDFS: Number of bytes written=1341614
+		HDFS: Number of read operations=16
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=8
+	Job Counters
+		Launched map tasks=4
+		Other local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=21762
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=21762
+		Total vcore-milliseconds taken by all map tasks=21762
+		Total megabyte-milliseconds taken by all map tasks=22284288
+	Map-Reduce Framework
+		Map input records=19868
+		Map output records=19868
+		Input split bytes=441
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=264
+		CPU time spent (ms)=4790
+		Physical memory (bytes) snapshot=829194240
+		Virtual memory (bytes) snapshot=6288580608
+		Total committed heap usage (bytes)=891813888
+	File Input Format Counters
+		Bytes Read=0
+	File Output Format Counters
+		Bytes Written=1341614
+23/04/20 14:15:31 INFO mapreduce.ImportJobBase: Transferred 1.2795 MB in 22.0485 seconds (59.4223 KB/sec)
+23/04/20 14:15:31 INFO mapreduce.ImportJobBase: Retrieved 19868 records.
+
+The row counts match:
+
+mysql> select count(*) from match_ids;
++----------+
+| count(*) |
++----------+
+|    19868 |
++----------+
+1 row in set (0.01 se
